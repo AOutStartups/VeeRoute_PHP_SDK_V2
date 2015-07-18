@@ -1,0 +1,24 @@
+{
+    "name": "VeeRoute/php",
+    "description": "PHP SDK for manage your VeeRoute account",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=5.3.2",
+        "lib-libxml": "*",
+        "lib-pcre": "*",
+        "phpunit/phpunit": "4.7.7",
+        "php-curl-class/php-curl-class": "3.5.5"
+    },
+    "autoload": {
+        "classmap": [
+            "EndPoints/",
+            "EndPoints/Orders/",
+            "EndPoints/Object/",
+            "EndPoints/Authentication/",
+            "Builder/",
+            "Config.php",
+            "VeeRouteException.php"
+        ]
+    }
+}
