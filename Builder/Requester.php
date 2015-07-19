@@ -72,7 +72,7 @@ class Requester  {
 
 
     protected function auth() {
-        $config = $this;
+        $config = clone $this;
         $config->auth_require = false;
         $auth = new \VeeRoute\Authentication\CreateSession($config);
         $this->access_token = $auth->make();
@@ -85,8 +85,19 @@ class Requester  {
         return null;
     }
 
-    protected function getRequestData($content) {
-        return null;
+    protected function getRequestData($content=array()) {
+        $content_for_xml_convert = array();
+
+        if($this->auth_require == true) {
+            $auth_part = array('sessionID'=>$this->access_token);
+            $content = array_merge($content, $auth_part);
+        }
+
+        $content_for_xml_convert = array('apiRequest'=>$content);
+
+        $xml = \Verdant\Array2XML::createXML($content_for_xml_convert);
+
+        return $xml->saveXML();
     }
 
 
@@ -121,7 +132,11 @@ class Requester  {
 
             if(!preg_match('/VeeRoute/', $class_path[$i])) {
 
-                array_push($class_path_for_url, lcfirst($class_path[$i]));
+
+                //replace _ to - (for distribution_api namespace)
+                //action - first lower letter
+                //add to $class_path_for_url array
+                array_push($class_path_for_url, str_replace("_","-", lcfirst($class_path[$i])));
 
             }
 

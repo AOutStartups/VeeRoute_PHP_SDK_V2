@@ -6,13 +6,14 @@
  * Time: 17:53
  */
 
-namespace VeeRoute\Orders;
+namespace VeeRoute\Distribution_api\Orders;
 
 
 /**
  * Class GetOrderStatuses
  * @package VeeRoute\Orders
- * @description: http://account.veeroute.com/knowledge/dev/200523451/201132292/203174982
+ * @url http://account.veeroute.com/knowledge/dev/200523451/201132292/203174982
+ * @description Получение статусов заказов
  */
 class GetOrderStatuses extends \VeeRoute\Builder\Url {
 

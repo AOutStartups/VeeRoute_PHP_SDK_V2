@@ -13,12 +13,6 @@ class Data extends Requester {
 
     protected $headers = array('Content-Type: application/xml');
 
-    protected function getRequestData() {
-
-        return $this;
-
-    }
-
 //    public function make() {
 //        $this->auth();
 //    }

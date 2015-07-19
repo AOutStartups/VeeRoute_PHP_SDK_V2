@@ -12,13 +12,15 @@
     },
     "autoload": {
         "classmap": [
-            "EndPoints/",
-            "EndPoints/Orders/",
-            "EndPoints/Object/",
-            "EndPoints/Authentication/",
+            "Distribution_api/",
+            "Distribution_api/Orders/",
+            "Distribution_api/Object/",
+            "Authentication/",
             "Builder/",
             "Config.php",
-            "VeeRouteException.php"
+            "VeeRouteException.php",
+            "Verdant/",
+            "tests"
         ]
     }
 }

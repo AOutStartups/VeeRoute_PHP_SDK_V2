@@ -10,9 +10,6 @@ namespace VeeRoute;
 
 
 class Config {
-
     public static $api_version = "2";
     public static $api_type = "rest";
-
-
 } 
